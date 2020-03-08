@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!--Font awesome library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/styledashboard.css">
+
+</head>
+
+<body>
+
+    <!--Nav Bar-->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark py-1 py-md-2  text-capitalize w-100 bg">
+        <a class="navbar-brand ml-lg-5 ml-sm-0" href="../index.html" data-page="page01">BookAddiction</a>
+        <div class="container-md">
+            <div class="collapse navbar-collapse col-xs-12" id="nav-mobile">
+                <ul class="navbar-nav ml-md-auto">
+
+                    <li class="nav-item">
+
+
+
+                        <a class="nav-item nav-link " href="main.html">
+
+                            Sign Out
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div class="container mx-0">
+        <div class="row">
+            <div class="col-md-3 my-4 mx-0 bg1 overflow-hidden">
+                <div class="row">
+                    <div class="col-md-2 mx-0"><i class="fas fa-home px-2"></i></div>
+                    <a href="dashboard.html">
+
+                        <div class="col-md-10 mx-0">
+
+                            Dashboard
+
+                        </div>
+                    </a>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-2 mx-0"><i class="fas fa-shopping-cart px-2"></i></div>
+                    <a href="products.html">
+
+                        <div class="col-md-10 mx-0">
+                            Products
+
+                        </div>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 mx-0"><i class="fa fa-list px-2"></i>
+                        <a href="main.html">
+
+                    </div>
+                    <div class="col-md-10 mx-0">Categories</div>
+                    </a>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-2 mx-0"><i class="fa fa-users px-2"></i></div>
+                    <a href="main.html">
+
+                        <div class="col-md-10 mx-0">Customers</div>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 mx-0"><i class="fas fa-scroll px-2"></i></div>
+                    <a href="main.html">
+
+                        <div class="col-md-10 mx-0">Orders</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12 border-bottom">
+                        <h1>Add Product</h1>
+                    </div>
+                </div>
+
+
+
+                <div class="row text-capitalize mt-3">
+                    <div class="col-md-4">
+                        <label for="basic-url">reference</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="basic-url">name</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="basic-url">author</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-md-12">
+                        <label for="basic-url">Description</label>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                </div>
+                <div class="row text-capitalize">
+                    <div class="col-md-6">
+                        <label for="basic-url">price</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="basic-url">discount</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label for="basic-url">Category</label>
+                        <div class="input-group">
+                            
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>Choose...</option>
+                                <option value="1">Biography</option>
+                                <option value="2">Computing</option>
+                                <option value="3">Business</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3 ml-1">
+
+                    <button class="btn btn-primary">Add Product</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

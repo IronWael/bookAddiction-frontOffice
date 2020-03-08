@@ -1,0 +1,46 @@
+
+
+    body, html {
+        font-family: OpenSans-Regular;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%)!important;
+    }
+
+    .card-container.card {
+        max-width: 350px;
+        padding: 40px 40px;
+    }
+
+    .card{
+        background-color: #F7F7F7;
+        padding: 20px 25px 30px;
+        margin: 0 auto 25px;
+        margin-top: 50px;
+        border-radius: 2px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    .profile-img-card {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 10px;
+        display: block;
+        border-radius: 50%;
+    }
+    .width{
+        height: 40px;
+    }
+    .txt {
+
+        color: #999999;  
+    }
+    .txt1 {
+        font-family: OpenSans-Regular;
+        font-size: 15px;
+        line-height: 1.4;
+        color: #999999;
+      }
+      #link {
+       text-decoration: none;
+       color : white;
+      }
