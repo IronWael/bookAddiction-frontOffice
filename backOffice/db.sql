@@ -20,6 +20,7 @@ create table books(
     release_date date,
     idauthor int ,
     idcategory int ,
+    image varchar(255),
     constraint pk_books PRIMARY KEY (id),
     constraint fk_books_authors FOREIGN KEY (idauthor) REFERENCES authors(id),
     constraint fk_books_categories FOREIGN KEY (idcategory) REFERENCES categories(id)

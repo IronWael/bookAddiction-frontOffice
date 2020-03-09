@@ -29,21 +29,15 @@ $book->idcategory = $_REQUEST['idcategory'];
     <div class="container">
         <form method="POST" action="../../controllers/bookController.php?event=edit&&id=<?php echo $id ?>">
             <div class="row text-capitalize mt-3">
-                <div class="col-md-4">
-                    <label for="basic-url">reference</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="resume" id="resume"
-                            value="<?php echo $book->resume; ?>" aria-describedby="basic-addon3">
-                    </div>
-                </div>
-                <div class="col-md-4">
+                
+                <div class="col-md-6">
                     <label for="basic-url">name</label>
                     <div class="input-group">
                         <input type="text" class="form-control" name="name" id="name" value="<?php echo $book->name; ?>"
                             aria-describedby="basic-addon3">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="basic-url">author</label>
                     <div class="input-group">
                         <input type="text" class="form-control" name="idauthor" id="idauthor"
@@ -52,28 +46,41 @@ $book->idcategory = $_REQUEST['idcategory'];
                 </div>
             </div>
             <div class="row my-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label for="basic-url">Description</label>
                     <textarea class="form-control" name="description" id="description"
                         value="<?php echo $book->description; ?>" aria-label="With textarea"></textarea>
                 </div>
+                <div class="col-md-6">
+                    <label for="basic-url">Resume</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="resume" id="resume"
+                            value="<?php echo $book->resume; ?>" aria-describedby="basic-addon3">
+                    </div>
+                </div>
             </div>
             <div class="row text-capitalize">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="basic-url">price</label>
                     <div class="input-group">
                         <input type="text" class="form-control" name="price" id="price"
                             value="<?php echo $book->price; ?> " aria-describedby="basic-addon3">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="basic-url">discount</label>
                     <div class="input-group">
                         <input type="text" class="form-control" name="discount" id="discount"
                             value="<?php echo $book->discount; ?>" aria-describedby="basic-addon3">
                     </div>
                 </div>
-
+                <div class="col-md-4">
+                    <label for="basic-url">Release Date</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="release_date" id="release_date"
+                            value="<?php echo $book->release_date; ?>" aria-describedby="basic-addon3">
+                    </div>
+                </div>
 
             </div>
             <div class="row mt-3">
@@ -90,11 +97,12 @@ $book->idcategory = $_REQUEST['idcategory'];
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="basic-url">Release Date</label>
+                    <label for="basic-url">Cover</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="release_date" id="release_date"
-                            value="<?php echo $book->release_date; ?>" aria-describedby="basic-addon3">
+
+                        <input type="file" class="form-control" name="img" required />
                     </div>
+
                 </div>
 
             </div>

@@ -20,6 +20,11 @@ if (isset($_GET['event']) && !empty($_GET['event'])) {
                 $book->release_date= $_REQUEST['release_date'];
                 $book->idauthor = $_REQUEST['idauthor'];
                 $book->idcategory = $_REQUEST['idcategory'];
+                $image=$_FILES['img']['name'];
+                $ext=substr($image,strpos($image,"."));
+                $imageName=generateRandomString().$ext;
+                move_uploaded_file($_FILES['img']['tmp_name'],"../assets/images/books/".$imageName); 
+                $book->image = $imageName;
                 $book->insert();
             
             break;
@@ -52,4 +57,16 @@ if (isset($_GET['event']) && !empty($_GET['event'])) {
 }else {
     echo "<h1 style='color:red'>You Are not allowed !</h1>";
 }
+
+function generateRandomString(){
+    $hourouf="012356789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
+    $charLength=strlen($hourouf);
+    $randomString="";
+    for($i=0;$i<10;$i++){
+        $randomString=$randomString.$hourouf[rand(0,$charLength-1)];
+    }
+    return $randomString;
+}
 ?>
+
+
