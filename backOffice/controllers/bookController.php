@@ -20,6 +20,11 @@ if (isset($_GET['event']) && !empty($_GET['event'])) {
                 $book->release_date= $_REQUEST['release_date'];
                 $book->idauthor = $_REQUEST['idauthor'];
                 $book->idcategory = $_REQUEST['idcategory'];
+                $imageName=$_FILES['img']['name'];
+                $ext=substr($imageName,strpos($imageName,"."));
+                $book->image=generateRandomString().$ext;
+
+                move_uploaded_file($_FILES['img']['tmp_name'],"../assets/images/books/".$book->image);
                 $book->insert();
             
             break;
@@ -31,15 +36,19 @@ if (isset($_GET['event']) && !empty($_GET['event'])) {
             case 'edit':
                 $book = new Book();
 
-                $book->id = $_GET['id'];
+                $book->id = $_REQUEST['idBook'];
                 $book->name = $_REQUEST['name'];
-                $book->name = $_REQUEST['description'];
-                $book->name = $_REQUEST['resume'];
-                $book->name = $_REQUEST['price'];
-                $book->name = $_REQUEST['discount'];
-                $book->name = $_REQUEST['release_date'];
-                $book->name = $_REQUEST['idauthor'];
-                $book->name = $_REQUEST['idcategory'];
+                $book->description = $_REQUEST['description'];
+                $book->resume = $_REQUEST['resume'];
+                $book->price = $_REQUEST['price'];
+                $book->discount = $_REQUEST['discount'];
+                $book->release_date= $_REQUEST['release_date'];
+                $book->idauthor = $_REQUEST['idauthor'];
+                $book->idcategory = $_REQUEST['idcategory'];
+                $imageName=$_FILES['img']['name'];
+                $ext=substr($imageName,strpos($imageName,"."));
+                $book->image=generateRandomString().$ext;
+                
                 $book->edit();
                 
             break;   
@@ -51,5 +60,14 @@ if (isset($_GET['event']) && !empty($_GET['event'])) {
         }
 }else {
     echo "<h1 style='color:red'>You Are not allowed !</h1>";
+}
+function generateRandomString(){
+    $hourouf="012356789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
+    $charLength=strlen($hourouf);
+    $randomString="";
+    for($i=0;$i<10;$i++){
+        $randomString=$randomString.$hourouf[rand(0,$charLength-1)];
+    }
+    return $randomString;
 }
 ?>

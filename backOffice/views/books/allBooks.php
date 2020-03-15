@@ -22,54 +22,62 @@ $data = Book::getAll();
     <div class="container">
         <div class="row">
             <div class="col">
-                <a href="addBook.php" class="btn btn-primary my-5"><i class="far fa-plus-square"></i> Add Book</a>  
+                <a href="addBook.php" class="btn btn-primary my-5"><i class="far fa-plus-square"></i> Add Book</a>
             </div>
         </div>
 
         <div class="row">
-        <div class="col">            
-            <table class="table">
-            <thead> 
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>description</th>
-                    <th>resume</th>
-                    <th>price</th>
-                    <th>discount</th>
-                    <th>release_date</th>
-                    <th>idauthor</th>
-                    <th>idcategory</th>
-                    <th>#</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($book = $data->fetchObject()){ ?>
-                <tr>
-                    <td><?php echo $book->id; ?> </td>
-                    <td><?php echo $book->name; ?> </td>
-                    <td><?php echo $book->description; ?> </td>
-                    <td><?php echo $book->resume; ?> </td>
-                    <td><?php echo $book->price; ?> </td>
-                    <td><?php echo $book->discount; ?> </td>
-                    <td><?php echo $book->release_date; ?> </td>
-                    <td><?php echo $book->idauthor; ?> </td>
-                    <td><?php echo $book->idcategory; ?> </td>
-                    
-                    <td> 
-                        <a href="../../controllers/bookController.php?event=delete&&idBook=<?php echo $book->id; ?>" class="btn btn-danger"> <i class="far fa-trash-alt"></i>   </a>
-                        <a href="editBook.php?id=<?php echo $book->id; ?>&&name=<?php echo $book->name; ?>
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>description</th>
+                            <th>resume</th>
+                            <th>price</th>
+                            <th>discount</th>
+                            <th>release_date</th>
+                            <th>idauthor</th>
+                            <th>idcategory</th>
+                            <th>Cover</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while($book = $data->fetchObject()){ ?>
+                        <tr class="text-center w-75 h-100">
+                            <td><?php echo $book->id; ?> </td>
+                            <td><?php echo $book->name; ?> </td>
+                            <td><?php echo $book->description; ?> </td>
+                            <td><?php echo $book->resume; ?> </td>
+                            <td><?php echo $book->price; ?> </td>
+                            <td><?php echo $book->discount; ?> </td>
+                            <td><?php echo $book->release_date; ?> </td>
+                            <td><?php echo $book->idauthor; ?> </td>
+                            <td><?php echo $book->idcategory; ?> </td>
+                            <td class =""> 
+                                <img class="w-75 h-100"src="../../assets/images/books/<?php echo $book->image;?>" 
+                                alt="<?php echo $book->image;?>">
+                            </td>
+
+                            <td>
+                                <a href="../../controllers/bookController.php?event=delete&&idBook=<?php echo $book->id; ?>"
+                                    class="btn btn-danger"> <i class="far fa-trash-alt"></i> </a>
+                                <a href="editBook.php?idBook=<?php echo $book->id; ?>&&name=<?php echo $book->name; ?>
                         &&description=<?php echo $book->description; ?>&&resume=<?php echo $book->resume; ?> 
                         &&price=<?php echo $book->price; ?>&&discount=<?php echo $book->discount; ?>&&release_date=<?php echo $book->release_date; ?>
-                        &&idauthor=<?php echo $book->release_date; ?>&&idcategory=<?php echo $book->idcategory; ?>" class="btn btn-warning"><i class="far fa-edit"></i></a> 
-                    </td>
-                </tr>
-                <?php } ?>
-            </tbody>
+                        &&idauthor=<?php echo $book->idauthor; ?>&&idcategory=<?php echo $book->idcategory; ?>&&image=<?php echo $book->image; ?>"
+                                    class="btn btn-warning"><i class="far fa-edit"></i></a>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
 
-            </table>
+                </table>
+                
+            </div>
         </div>
-    </div>
 
 
 

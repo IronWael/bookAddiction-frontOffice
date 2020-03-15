@@ -1,3 +1,15 @@
+<?php
+include "../../configdb/db_connector.php";
+include "../../models/category.php";
+include "../../models/author.php";
+$base = connect_to_db();
+$data1 = Category::getAll();
+$data2 = Author::getAll();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,45 +27,61 @@
         <form name="addBookForm" method="POST" action="../../controllers/bookController.php?event=add"
             onSubmit="return verifName();" enctype="multipart/form-data">
             <div class="row text-capitalize mt-3">
-                <div class="col-md-4">
-                    <label for="basic-url">reference</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="resume" id="resume" aria-describedby="basic-addon3">
-                    </div>
-                </div>
-                <div class="col-md-4">
+
+                <div class="col-md-6">
                     <label for="basic-url">name</label>
                     <div class="input-group">
                         <input type="text" class="form-control" name="name" id="name" aria-describedby="basic-addon3">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="basic-url">author</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="idauthor" id="idauthor" aria-describedby="basic-addon3">
-                    </div>
+                    <select name="idauthor" class="form-control w-100 p-1">
+                        <?php while ($author = $data2->fetchObject()) { ?>
+                        <tr>
+                            <option value=<?php echo $author->id; ?>>
+                                <?php echo $author->name; ?>
+                        </tr>
+                        <?php } ?>
+                    </select>
                 </div>
             </div>
             <div class="row my-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label for="basic-url">Description</label>
-                    <textarea class="form-control" name="description" id="description" aria-label="With textarea"></textarea>
+                    <textarea class="form-control" name="description" id="description"
+                        aria-label="With textarea"></textarea>
+                </div>
+                <div class="col-md-6">
+                    <label for="basic-url">Resume</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="resume" id="resume"
+                            aria-describedby="basic-addon3">
+                    </div>
                 </div>
             </div>
+
             <div class="row text-capitalize">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="basic-url">price</label>
                     <div class="input-group">
                         <input type="text" class="form-control" name="price" id="price" aria-describedby="basic-addon3">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="basic-url">discount</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="discount" id="discount" aria-describedby="basic-addon3">
+                        <input type="text" class="form-control" name="discount" id="discount"
+                            aria-describedby="basic-addon3">
                     </div>
                 </div>
-
+                <div class="col-md-4">
+                    <label for="basic-url">Release Date</label>
+                    <div class="input-group">
+                        <input type="date" class="form-control" name="release_date" id="release_date"
+                            aria-describedby="basic-addon3">
+                    </div>
+                </div>
 
             </div>
             <div class="row mt-3">
@@ -61,28 +89,30 @@
                     <label for="basic-url">Category</label>
                     <div class="input-group">
 
-                        <select class="custom-select" name="idcategory" id="idcategory">
-                            <option selected>Choose...</option>
-                            <option value="1">Biography</option>
-                            <option value="2">Computing</option>
-                            <option value="3">Business</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="basic-url">Release Date</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="release_date" id="release_date" aria-describedby="basic-addon3">
+                        <select name="idcategory" class="form-control w-100 p-1">
+
+
+
+                            <?php while ($category = $data1->fetchObject()) { ?>
+                            <tr>
+                                <option value=<?php echo $category->id; ?>>
+
+                                    <?php echo $category->name; ?>
+
+                            </tr>
+                            <?php } ?>
+                            </select>
                     </div>
                 </div>
 
+                <div class="col-md-6">
+                    <label for="basic-url3">Cover</label>
+                    <div class="input-group">
+                    <input type="file" class="form-control" name="img" required />
+                    </div>
+                </div>
             </div>
-            <div class="row mt-3">
-            <div class="col-6">
-            <label for="basic-url">Cover</label>
-                                    <input type="file" class="form-control" name="img" required /></p>
-                            </div>
-            </div>
+            
             <div class="row mt-3 ml-1">
 
                 <button class="btn btn-primary">Add Book</button>
