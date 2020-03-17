@@ -50,7 +50,7 @@ if (isset($_GET['event']) && !empty($_GET['event'])) {
                 $imageName=$_FILES['img']['name'];
                 $ext=substr($imageName,strpos($imageName,"."));
                 $book->image=generateRandomString().$ext;
-                
+                move_uploaded_file($_FILES['img']['tmp_name'],"../assets/images/books/".$book->image);
                 $book->edit();
                 
             break;   
