@@ -60,13 +60,7 @@ $image = $_REQUEST['image'];
                         <?php } ?>
                     </select>
                 </div>
-                <div class="col-md-6">
-                    <label for="basic-url">Resume</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="resume" id="resume"
-                            value="<?php echo $book->resume; ?>" aria-describedby="basic-addon3">
-                    </div>
-                </div>
+                
             </div>
                 <div class=" row my-3">
                     <div class="col-md-6">
@@ -77,8 +71,8 @@ $image = $_REQUEST['image'];
                     <div class="col-md-6">
                                 <label for="basic-url">Resume</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="resume" id="resume"
-                                    value="<?php echo $resume ?>"aria-describedby="basic-addon3">
+                                    <textarea type="text" class="form-control" name="resume" id="resume"
+                                    value="<?php echo $resume ?>"aria-describedby="basic-addon3"></textarea>
                                 </div>
                     </div>
                 </div>
@@ -133,7 +127,7 @@ $image = $_REQUEST['image'];
                     <div class="col-md-6">
                         <label for="basic-url3">Cover</label>
                         <div class="input-group">
-                            <input type="file" class="form-control" value="<?php echo "../assets/images/books/".$image ?>"name="img" />
+                            <input type="file" class="form-control" value="<?php echo "../../assets/images/books/".$image ?>"name="img" />
                         </div>
                     </div>
 

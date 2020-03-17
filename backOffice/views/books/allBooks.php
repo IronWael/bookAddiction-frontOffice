@@ -30,7 +30,8 @@ $data = Book::getAll();
             <div class="col">
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="text-center text-capitalize">
+                            <th>Cover</th>
                             <th>id</th>
                             <th>Name</th>
                             <th>description</th>
@@ -40,42 +41,53 @@ $data = Book::getAll();
                             <th>release_date</th>
                             <th>idauthor</th>
                             <th>idcategory</th>
-                            <th>Cover</th>
                             <th>#</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while($book = $data->fetchObject()){ ?>
-                        <tr class="text-center w-75 h-100">
-                            <td><?php echo $book->id; ?> </td>
-                            <td><?php echo $book->name; ?> </td>
-                            <td><?php echo $book->description; ?> </td>
-                            <td><?php echo $book->resume; ?> </td>
-                            <td><?php echo $book->price; ?> </td>
-                            <td><?php echo $book->discount; ?> </td>
-                            <td><?php echo $book->release_date; ?> </td>
-                            <td><?php echo $book->idauthor; ?> </td>
-                            <td><?php echo $book->idcategory; ?> </td>
-                            <td class =""> 
-                                <img class="w-75 h-100"src="../../assets/images/books/<?php echo $book->image;?>" 
-                                alt="<?php echo $book->image;?>">
-                            </td>
 
-                            <td>
-                                <a href="../../controllers/bookController.php?event=delete&&idBook=<?php echo $book->id; ?>"
-                                    class="btn btn-danger"> <i class="far fa-trash-alt"></i> </a>
-                                <a href="editBook.php?idBook=<?php echo $book->id; ?>&&name=<?php echo $book->name; ?>
-                        &&description=<?php echo $book->description; ?>&&resume=<?php echo $book->resume; ?> 
-                        &&price=<?php echo $book->price; ?>&&discount=<?php echo $book->discount; ?>&&release_date=<?php echo $book->release_date; ?>
-                        &&idauthor=<?php echo $book->idauthor; ?>&&idcategory=<?php echo $book->idcategory; ?>&&image=<?php echo $book->image; ?>"
-                                    class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            </td>
+                        <?php while($book = $data->fetchObject()){ ?>
+                        <tr class="text-center">
+                            <div class="container my-2">
+                                <td>
+                                    <div class="container w-75 h-100"><img class="w-75 h-100"
+                                            src="../../assets/images/books/<?php echo $book->image;?>"
+                                            alt="<?php echo $book->image;?>">
+                                    </div>
+
+                                </td>
+                                <td><div class="my-5"><?php echo $book->id; ?></div> </td>
+                                <td><div class="my-5"><?php echo $book->name; ?> </div></td>
+                                <td><div class="my-5"><?php echo $book->description; ?></div> </td>
+                                <td><div class="my-5"><?php echo $book->resume; ?></div> </td>
+                                <td><div class="my-5"><?php echo $book->price; ?></div> </td>
+                                <td><div class="my-5"><?php echo $book->discount; ?> </div></td>
+                                <td><div class="my-5"><?php echo $book->release_date; ?></div> </td>
+                                <td><div class="my-5"><?php echo $book->idauthor; ?></div> </td>
+                                <td><div class="my-5"><?php echo $book->idcategory; ?></div> </td>
+
+
+                                <td>
+                                <div class="my-5">
+                                    <a href="../../controllers/bookController.php?event=delete&&idBook=<?php echo $book->id; ?>"
+                                        class="btn btn-danger"> <i class="far fa-trash-alt"></i> 
+                                    </a>
+                                    <a href="editBook.php?idBook=<?php echo $book->id; ?>&&name=<?php echo $book->name; ?>
+                                           &&description=<?php echo $book->description; ?>&&resume=<?php echo $book->resume; ?> 
+                                           &&price=<?php echo $book->price; ?>&&discount=<?php echo $book->discount; ?>&&release_date=<?php echo $book->release_date; ?>
+                                           &&idauthor=<?php echo $book->idauthor; ?>&&idcategory=<?php echo $book->idcategory; ?>&&image=<?php echo $book->image; ?>"
+                                        class="btn btn-warning"><i class="far fa-edit"></i>
+                                    </a>
+                                    </div>
+                                </td>
+                            </div>
                         </tr>
+
                         <?php } ?>
                     </tbody>
 
                 </table>
-                
+
             </div>
         </div>
 

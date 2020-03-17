@@ -52,13 +52,7 @@ $data2 = Author::getAll();
                     <textarea class="form-control" name="description" id="description"
                         aria-label="With textarea"></textarea>
                 </div>
-                <div class="col-md-6">
-                    <label for="basic-url">Resume</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="resume" id="resume"
-                            aria-describedby="basic-addon3">
-                    </div>
-                </div>
+                
                 <div class="col-md-6">
                     <label for="basic-url">Resume</label>
                     <textarea class="form-control" name="resume" id="resume" aria-label="With textarea"></textarea>
