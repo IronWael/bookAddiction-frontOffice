@@ -4,6 +4,14 @@ session_start();
 if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
     header('location:login.php?error=notallowed');
 }
+include "../../configdb/db_connector.php";
+include "../../models/category.php";
+include "../../models/author.php";
+include "../../models/book.php";
+$base = connect_to_db();
+$data1 = Category::getAll();
+$data2 = Author::getAll();
+$data3 = Book::getAll();
 ?>
 
 
@@ -17,6 +25,7 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/styleDashbord.css">
     <title>Title</title>
 </head>
 
@@ -49,7 +58,7 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
             <div class=" link col-md-3 my-4 mx-0 bg-light overflow-hidden">
                 <div class="row">
                     <div class="col-md-2 mx-0"><i class="fas fa-home px-2"></i></div>
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
 
                         <div class="col-md-10 mx-0">
 
@@ -60,7 +69,7 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
                 </div>
                 <div class="row my-2">
                     <div class="col-md-2 mx-0"><i class="fas fa-shopping-cart px-2"></i></div>
-                    <a href="products.html">
+                    <a href="../books/allBooks.php">
 
                         <div class="col-md-10 mx-0">
                             Products
@@ -68,17 +77,25 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
                         </div>
                     </a>
                 </div>
-                <div class="row">
+                <div class="row my-2">
                     <div class="col-md-2 mx-0"><i class="fa fa-list px-2"></i>
-                        <a href="main.html">
+                        <a href="../categories/allCategories.php">
 
                     </div>
                     <div class="col-md-10 mx-0">Categories</div>
                     </a>
                 </div>
+                <div class="row">
+                    <div class="col-md-2 mx-0"><i class="fa fa-list px-2"></i>
+                        <a href="../authors/allAuthors.php">
+
+                    </div>
+                    <div class="col-md-10 mx-0">Authors</div>
+                    </a>
+                </div>
                 <div class="row my-2">
                     <div class="col-md-2 mx-0"><i class="fa fa-users px-2"></i></div>
-                    <a href="main.html">
+                    <a href="">
 
                         <div class="col-md-10 mx-0">Customers</div>
                     </a>
@@ -102,7 +119,6 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
                             <div class="col-md-12 border-bottom">
                                 <h2>Products</h2>
                             </div>
-
                             <div class=" col-md-12 text-capitalize font-weight-bold mt-2 border-bottom">
                                 <div class="row">
                                     <div class="col-md-1">
@@ -126,27 +142,37 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
                                 </div>
                             </div>
                             <div class="ref col-md-12 text-capitalize">
+                             <?php while($book = $data3->fetchObject()){ ?>
                                 <div class="row">
                                     <div class="col-md-1">
-                                        <p>1</p>
+                                        <p><?php echo $book->id; ?></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <p>making faces</p>
+                                        <p><?php echo $book->name; ?></p>
                                     </div>
-                                    <div class="col-md-2">
-                                        <p>kevyn aucoin</p>
-                                    </div>
+                                    <?php while ($author = $data2->fetchObject()) { ?>
+
+                                       <div class="col-md-2">
+                                           <?php if (($author->id)==($book->idauthor)){ ?>
+                                
+                                                <p><?php echo $author->name; ?></p>
+
+                                            <?php } ?> 
+                                        </div>
+                                    <?php } ?> 
                                     <div class="col-md-3">
-                                        <p>biography</p>
+                                        <p><?php echo $book->description; ?></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <p>$75</p>
+                                        <p><?php echo $book->price; ?></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <p>$25</p>
+                                        <p><?php echo $book->discount; ?></p>
                                     </div>
                                 </div>
+                            <?php } ?> 
                             </div>
+                            
                         </div>
 
                     </div>
@@ -157,10 +183,11 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
                                 <h2>Categories</h2>
                             </div>
                             <div class=" col-md-12 text-capitalize font-weight-bold mt-2 border-bottom">
+                            
                                 <div class="row">
 
                                     <div class="col-md-4">
-                                        <p>ref</p>
+                                        <p>id</p>
                                     </div>
                                     <div class="col-md-4">
                                         <p>name</p>
@@ -168,15 +195,17 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
                                 </div>
                             </div>
                             <div class="ref col-md-12 text-capitalize">
-                                <div class="row">
+                                <?php while($category = $data1->fetchObject()){ ?>
+                                    <div class="row">
 
-                                    <div class="col-md-4">
-                                        <p>1</p>
+                                        <div class="col-md-4">
+                                            <p><?php echo $category->id; ?></p>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p><?php echo $category->name; ?></p>
+                                        </div>
                                     </div>
-                                    <div class="col-md-8">
-                                        <p>Biography</p>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
 
 
