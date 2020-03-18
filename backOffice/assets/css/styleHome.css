@@ -1,0 +1,88 @@
+body {
+    font-family: OpenSans-Regular;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+
+img{
+    height: 260px;
+}
+.solde {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: cadetblue;
+    text-decoration: line-through;
+}
+.desafficher {
+    display: none;
+}
+#basket{
+    width: 40px;
+    height: 40px;
+}
+.text{
+    text-decoration: none;
+}
+.borde{
+    border-width: 1px;
+    border-color: black;
+}
+.corbeille{
+    width: 40px;
+    height: 40px;
+}
+.card-body{
+    background-color: #F7F7F7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.categories{
+    background-color: #F7F7F7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.bg-img {
+    /* The image used */
+    background-image: url("../images/navbar-image.jpg");
+  
+    max-height: 450px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    /* Needed to position the navbar */
+    position: relative;
+  }
+  
+  /* Position the navbar container inside the image */
+  #navb{
+    position: absolute;
+    margin: 20px;
+    width: auto;
+  }
+  
+  /* The navbar */
+  .topnav {
+    overflow: hidden;
+    /*background-color: #333;*/
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Navbar links */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }

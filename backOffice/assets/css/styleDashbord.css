@@ -1,0 +1,31 @@
+body,html {
+    width: 100%;
+    font-family: Poppins, sans-serif, Montserrat;
+    overflow: hidden;
+    overflow-x: hidden !important;
+}
+a:hover {color: #b48619 !important;}
+a{
+    text-decoration: none !important;
+    color : white;
+
+}
+.container .link a{
+    color : rgba(0,0,0,0.7);
+
+}
+
+.bg{ 
+    /* The image used */
+    background-color: rgba(0,0,0,0.7);
+
+
+}
+
+.bg1 .row a{
+    color: #777;font-size: 14px;
+
+}
+.ref{
+    background-color:#5555;
+}

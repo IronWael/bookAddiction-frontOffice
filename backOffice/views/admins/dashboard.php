@@ -33,7 +33,7 @@ $data3 = Book::getAll();
 
 
     <nav class="navbar navbar-expand-lg navbar-dark py-1 py-md-2  text-capitalize w-100 bg">
-        <a class="navbar-brand ml-lg-5 ml-sm-0" href="../index.html" data-page="page01">BookAddiction</a>
+        <a class="navbar-brand ml-lg-5 ml-sm-0" href="../home.php" data-page="page01">BookAddiction</a>
         <div class="container-md">
             <div class="collapse navbar-collapse col-xs-12" id="nav-mobile">
                 <ul class="navbar-nav ml-md-auto">
