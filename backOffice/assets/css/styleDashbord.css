@@ -4,11 +4,17 @@ body,html {
     overflow: hidden;
     overflow-x: hidden !important;
 }
+img{
+    height: 260px;
+}
 a:hover {color: #b48619 !important;}
 a{
     text-decoration: none !important;
     color : white;
 
+}
+.card a {
+  color:  rgba(0,0,0,0.7);
 }
 .container .link a{
     color : rgba(0,0,0,0.7);
