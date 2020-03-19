@@ -1,7 +1,7 @@
 body,html {
     width: 100%;
     font-family: Poppins, sans-serif, Montserrat;
-    overflow: hidden !important;
+    overflow: auto !important;
     overflow-x: hidden !important;
 }
 img{
