@@ -13,8 +13,8 @@ $resume = $_REQUEST['resume'];
 $price = $_REQUEST['price'];
 $discount = $_REQUEST['discount'];
 $release_date = $_REQUEST['release_date'];
-$idauthor = $_REQUEST['idauthor'];
-$idcategory = $_REQUEST['idcategory'];
+$idauthor = $_REQUEST['author'];
+$idcategory = $_REQUEST['category'];
 $image = $_REQUEST['image'];
 
 ?>
@@ -46,13 +46,13 @@ $image = $_REQUEST['image'];
                     <label for="basic-url">author</label>
                     <select name="idauthor" class="form-control w-100 p-1">
                             
-                        <?php while ($author = $data2->fetchObject()) { ?>
-                            <?php if (($author->id)==$idauthor) { ?>
-                                <option value="<?php echo $idauthor ?>" selected><?php echo $author->name; ?></option>
+                    <?php while ($author = $data2->fetchObject()) { ?>
+                            <?php if (($author->name)==$idauthor) { ?>
+                                <option value="<?php echo $author->id ?>" selected><?php echo $author->name; ?></option>
                             <?php
                             }
                             else {?>
-                            <option value="<?php echo $author->id; ?>">
+                            <option value="<?php echo $author->id ?>">
                                 <?php echo $author->name;?>
                             </option>
                             
@@ -109,8 +109,8 @@ $image = $_REQUEST['image'];
 
                             <select name="idcategory" class="form-control w-100 p-1">
                             <?php while ($category = $data1->fetchObject()) { ?>
-                            <?php if (($category->id)==$idcategory) { ?>
-                                <option value="<?php echo $idcategory ?>" selected><?php echo $category->name; ?></option>
+                            <?php if (($category->name)==$idcategory) { ?>
+                                <option value="<?php echo $category->id ?>" selected><?php echo $category->name; ?></option>
                             <?php
                             }
                             else {?>

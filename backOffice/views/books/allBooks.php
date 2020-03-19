@@ -117,8 +117,8 @@ $data = Book::getAll();
                                     <th>price</th>
                                     <!--<th>discount</th>-->
                                     <th>release date</th>
-                                    <th>id author</th>
-                                    <th>id category</th>
+                                    <th>author</th>
+                                    <th>category</th>
                                     <th>#</th>
                                 </tr>
                             </thead>
@@ -158,10 +158,10 @@ $data = Book::getAll();
                                             <div class="my-5"><?php echo $book->release_date; ?></div>
                                         </td>
                                         <td>
-                                            <div class="my-5"><?php echo $book->idauthor; ?></div>
+                                            <div class="my-5"><?php echo $book->author; ?></div>
                                         </td>
                                         <td>
-                                            <div class="my-5"><?php echo $book->idcategory; ?></div>
+                                            <div class="my-5"><?php echo $book->category; ?></div>
                                         </td>
 
 
@@ -173,7 +173,7 @@ $data = Book::getAll();
                                                 <a href="editBook.php?idBook=<?php echo $book->id; ?>&&name=<?php echo $book->name; ?>
                                            &&description=<?php echo $book->description; ?>&&resume=<?php echo $book->resume; ?> 
                                            &&price=<?php echo $book->price; ?>&&discount=<?php echo $book->discount; ?>&&release_date=<?php echo $book->release_date; ?>
-                                           &&idauthor=<?php echo $book->idauthor; ?>&&idcategory=<?php echo $book->idcategory; ?>&&image=<?php echo $book->image; ?>"
+                                           &&author=<?php echo $book->author; ?>&&category=<?php echo $book->category; ?>&&image=<?php echo $book->image; ?>"
                                                     class="btn btn-warning"><i class="far fa-edit"></i>
                                                 </a>
                                             </div>

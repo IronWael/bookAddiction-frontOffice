@@ -62,9 +62,18 @@ $data3 = Book::getAll();
                 <h1 class="my-4 mx-4">Categories</h1>
                 <div class="card mx-4">
                     <ul class="list-group list-group-flush categories text-capitalize">
+                
+                        <li class="list-group-item text-center my-2">
+                            <a onclick="filterBooks('books')"> all books </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="card mx-4">
+                    <ul class="list-group list-group-flush categories text-capitalize">
                     <?php while($category = $data1->fetchObject()){ ?>
                         <li class="list-group-item text-center my-2">
-                            <a onclick="filterBooks('computing')"> <?php echo $category->name; ?> </a>
+                            <a onclick="filterBooks('<?php echo $category->name; ?>')"> <?php echo $category->name; ?> </a>
                         </li>
                         <?php } ?>
                     </ul>
@@ -73,8 +82,12 @@ $data3 = Book::getAll();
 
             <div class="col-md-9">
                 <div class="row">
-                <?php while($book = $data3->fetchObject()){ ?>
-                    <div class="books computing col-md-4 my-4">
+                <?php while($book = $data3->fetchObject()){?>
+                     
+                         
+                            <div class="books <?php echo $book->category;?> col-md-4 my-4">
+                        
+                    
                         <div class="card">
                             <a href="" class="text-center">
                             <img class="img card-img-top"

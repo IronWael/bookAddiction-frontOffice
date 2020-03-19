@@ -16,7 +16,9 @@ class Book{
     public static function getAll(){
 
         $base = connect_to_db();
-        $requette = "SELECT * From books ;";
+        $requette = "SELECT  b.id, b.name, b.description,b.resume, b.price, b.discount,b.release_date, a.name as author,c.name as category, b.image 
+        from books as b , authors as a , categories as c  
+        where b.idauthor = a.id and b.idcategory = c.id" ;    
         $data = $base->query($requette);
 
         return $data;

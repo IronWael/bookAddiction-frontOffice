@@ -150,16 +150,16 @@ $data3 = Book::getAll();
                                     <div class="col-md-2">
                                         <p><?php echo $book->name; ?></p>
                                     </div>
-                                    <?php while ($author = $data2->fetchObject()) { ?>
+                                    
 
                                        <div class="col-md-2">
-                                           <?php if (($author->id)==($book->idauthor)){ ?>
+                                           
                                 
-                                                <p><?php echo $author->name; ?></p>
+                                                <p><?php echo $book->author; ?></p>
 
-                                            <?php } ?> 
+                                             
                                         </div>
-                                    <?php } ?> 
+                                    
                                     <div class="col-md-3">
                                         <p><?php echo $book->description; ?></p>
                                     </div>
