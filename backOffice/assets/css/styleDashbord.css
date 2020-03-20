@@ -4,10 +4,12 @@ body,html {
     overflow: auto !important;
     overflow-x: hidden !important;
 }
-img{
+.books .card :hover {opacity: 0.8!important;}
+.img{
     height: 260px;
 }
-a:hover {color: #b48619 !important;}
+a:hover {color: #b48619 !important;
+cursor: pointer;}
 a{
     text-decoration: none !important;
     color : white;
