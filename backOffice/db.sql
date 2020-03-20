@@ -25,3 +25,15 @@ create table books(
     constraint fk_books_authors FOREIGN KEY (idauthor) REFERENCES authors(id),
     constraint fk_books_categories FOREIGN KEY (idcategory) REFERENCES categories(id)
 );
+create table users(
+    id int AUTO_INCREMENT,
+    firstname varchar(50),
+    lastname varchar(50),
+    email varchar(250) UNIQUE,
+    role varchar(50),
+    password varchar(50),
+    constraint pk_admins PRIMARY KEY(id)
+);
+
+ALTER TABLE users
+ADD UNIQUE (email);
