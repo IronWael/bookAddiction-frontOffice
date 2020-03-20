@@ -28,13 +28,13 @@ if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
                 if ($_GET['error'] == 'true') {
                     echo "<div class='form-row'>
                         <div class='col'>
-                            <div class='alert alert-danger'>Email Ou mot de passe ghaltin !</div>
+                            <div class='alert alert-danger'>Email or Password are incorrect !</div>
                         </div>
                     </div>";
                 }else if($_GET['error'] == 'notallowed'){
                     echo "<div class='form-row'>
                     <div class='col'>
-                        <div class='alert alert-danger'>Connecti yehdik w yarhem bouk !</div>
+                        <div class='alert alert-danger'>You are not connected!</div>
                     </div>
                 </div>";  
                 }else if ($_GET['error'] == 'false') {
